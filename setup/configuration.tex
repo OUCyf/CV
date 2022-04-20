@@ -1,0 +1,86 @@
+
+% Useful macros
+\newcommand{\DOI}[1]{doi:\href{https://dx.doi.org/#1}{#1}}
+
+% ctex is needed to show my Chinese name
+\usepackage[fontset=fandol]{ctex}
+% Set the page margins
+\usepackage[margin=2.5cm]{geometry}
+% Set fonts
+\usepackage{fontspec}
+\usepackage[default,semibold]{sourcesanspro}
+
+% Use fontawesome icons
+\usepackage[fixed]{fontawesome5}
+
+% numbering items in reversed orders
+\usepackage[itemsep=2pt]{etaremune}
+
+% Control the font size
+\usepackage{anyfontsize}
+
+% Define command to insert month name and year as date
+\usepackage{datetime}
+\newdateformat{monthyear}{\THEYEAR/\twodigit{\THEMONTH}}
+
+% Control the spacing before and after section title
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{1ex}{1ex}
+% Disable numbering of section and subsection
+\titleformat{\section}{\normalfont\Large\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{}{0.5em}{}
+
+% Control line spacing
+\renewcommand{\baselinestretch}{1.2}
+% Control vertical spacing of tables
+\renewcommand{\arraystretch}{1.2}
+\setlength{\parindent}{0pt} % no indent for paragraph
+
+% Control space between items in itemize and enumerate
+\usepackage{enumitem}
+\setlist{itemsep=0pt}
+
+% Fancy and long tables
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{environ}
+\NewEnviron{EntriesTable}[3]{
+\vspace{-1.25em}
+\begin{tabularx}{\textwidth}{p{#1\textwidth}@{\hspace{#2\textwidth}}p{#3\textwidth}}
+    \BODY
+\end{tabularx}
+}
+
+% Get the total number of pages
+\usepackage{lastpage}
+
+% Set fancy headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\chead{
+    \itshape
+    \fontsize{10pt}{12pt}\selectfont
+    \Name
+    \hspace{0.2cm} -- \hspace{0.2cm}
+    \Title
+    \hspace{0.2cm} -- \hspace{0.2cm}
+    \monthyear\today
+}
+\rhead{}
+\cfoot{\fontsize{10pt}{0}\selectfont \thepage/\pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+
+% Use custom colors
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Metadata for the PDF output and control of hyperlinks
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{ % document metadata
+    % pdftitle = {\Name\ - \Title},
+    % pdfauthor = {\Name},
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,
+    urlcolor=MidnightBlue,
+}

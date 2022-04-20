@@ -1,3 +1,13 @@
+# MacOS junk
+*.DS_Store
+
+main.pdf
+main.gif
+
+
+# pygments
+_minted-main/
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

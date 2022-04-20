@@ -1,0 +1,64 @@
+name: Build
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install TexLive and make
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: |
+            apk add make
+            make
+
+      # - name: Install TinyTeX
+      #   run: |
+      #     make install_tex
+      #     echo "${HOME}/bin" >> $GITHUB_PATH
+
+      # - name: Install LaTeX packages
+      #   run: make install_packages
+
+      # - name: Build Template
+      #   run: make
+
+
+      - name: Install ghostscript
+        run: sudo apt install ghostscript
+
+      - name: Change ImageMagick security policy
+        run: |
+          DQT='"' 
+          SRC="rights=${DQT}none${DQT} pattern=${DQT}PDF${DQT}"
+          RPL="rights=${DQT}read\|write${DQT} pattern=${DQT}PDF${DQT}"
+          sudo sed -i "s/$SRC/$RPL/" /etc/ImageMagick-6/policy.xml
+
+      - name: Convert PDF to PNG
+        run: make gif
+
+      - name: Prepare files for gh-pages
+        run: |
+          mkdir public
+          mv cv_en.pdf public/cv_en.pdf
+          mv cv_en.gif public/cv_en.gif
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.event_name == 'push'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          force_orphan: true

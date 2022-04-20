@@ -1,0 +1,82 @@
+
+\documentclass[11pt,a4paper]{article}
+\input{./setup/configuration}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Identifying Information
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Title}{Curriculum Vit\ae}
+\newcommand{\Name}{Fu Yin}
+\newcommand{\CNName}{尹扶}
+% \newcommand{\Role}{Ph.D. Candidate}
+% \newcommand{\Email}{yinfu@rice.edu}
+\newcommand{\Email}{yinfu@mail.ustc.edu.cn}
+\newcommand{\Website}{yinfu.info}
+\newcommand{\Github}{OUCyf}
+% \newcommand{\Orcid}{0000-0000-1111-1111}
+
+% \newcommand{\Affiliation}{Earth, Environmental and Planetary Sciences \\ Rice University}
+% \newcommand{\Address}{MS-126, 3100 Main Street \\ Houston, TX 77005 USA}
+
+\newcommand{\Affiliation}{School of Earth and Space Sciences \\ University of Science and Technology of China}
+\newcommand{\Address}{96 Jinzhai Road \\ Hefei, Anhui, 230026 China}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CV Header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty} % No header for the first page
+\fontfamily{ptm}
+
+\begin{center}
+  {\fontsize{24pt}{0}\selectfont \Name \hspace{1ex} \kaishu{\CNName}} 
+  % \\[0.4cm]
+  % {\fontsize{16pt}{0}\selectfont \Role} 
+  \\[0.2cm]
+\end{center}
+
+\begin{minipage}[t]{0.7\textwidth}
+  \fontsize{12pt}{15pt}\selectfont
+  \Affiliation 
+  \\
+  \Address
+\end{minipage}
+\begin{minipage}[t]{0.3\textwidth}
+  \fontsize{12pt}{15pt}\selectfont
+  \begin{flushleft}
+    \faEnvelope \href{mailto:\Email}{\Email} 
+    \\
+    % \faOrcid \href{https://orcid.org/\Orcid}{\Orcid} \\
+    \faGlobe \href{https://\Website}{\Website} 
+    \\
+    \faGithub \href{https://github.com/\Github}{\Github}
+  \end{flushleft}
+\end{minipage}
+
+\vspace{0.2cm}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Main Body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./en/education}
+\input{./en/interests}
+\input{./en/activities}
+\input{./en/awards}
+\input{./en/publications}
+\input{./en/abstracts}
+\input{./en/talks}
+\input{./en/teaching}
+\input{./en/fieldwork}
+\input{./en/software}
+
+\end{document}
