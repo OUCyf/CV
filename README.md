@@ -35,9 +35,12 @@ Download my CV:
 - [Chinese version]() [not available now]
 
 ---
-<center class="half">
-  <img src="./cv_en.gif" width="650"> 
-</center>
+
+![img](https://github.com/OUCyf/CV/raw/gh-pages/cv_en.gif)
+
+<!-- <center class="half">
+  <img src="./cv_en.gif" width="800"> 
+</center> -->
 
 ---
 

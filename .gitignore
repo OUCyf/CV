@@ -1,12 +1,7 @@
 # MacOS junk
 *.DS_Store
-
-main.pdf
-main.gif
-
-
-# pygments
-_minted-main/
+cv_en.pdf
+cv_en.gif
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
